@@ -69,6 +69,9 @@ export default {
     return{
       teacherSelections:[{'id':1,'topic':'Mitochondria',
       'theme':'sci-fi', 
+      'tries':'1'},
+      {'id':2,'topic':'Fact about Uranus',
+      'theme':'rap', 
       'tries':'1'}],
       newTopic: '',
       triesNum: '1',
