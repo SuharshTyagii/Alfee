@@ -1,7 +1,7 @@
 <template>
   <div class=" flex justify-between py-2 align-center ">
 
-<div class="px-2 py-2 w-2/5">{{topic}} </div>
+<div class="px-2 py-2 w-2/5 text-lg font-semibold">{{topic}} </div>
             <select name="" v-model="selectedTheme" id="" class="border border-gray-400 px-4 w-1/5">
             <option value="sciFi">Sci-fi</option>
            <option value="fantasy">Fantasy</option>
@@ -9,10 +9,10 @@
           </select>
           <div>
           <input type="number" max="5" min="1"
-            v-model="selectedTries"  class="border border-gray-400 px-6 py-3 " id="">
+            v-model="selectedTries"  class="border border-gray-400 px-6 py-4 " id="">
             
           </div>
-            <button class="bg-green-600 rounded px-4 w-1/4 text-white shadow-md py-1" 
+            <button class="bg-purple-600 rounded px-4 w-1/4 text-white shadow-md py-1" 
             @click="generateStory">Generate Story</button>
             </div>    
 

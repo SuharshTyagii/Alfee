@@ -17,8 +17,8 @@
       <br>
       <div class="userInterface flex justify-around ">
         <div class="w-1/2 text-center px-4">
-        <div class=" pl-5 pr-3 py-4   bg-gray-100 h-1/2 shadow-md  ">
-          <span class=" subtitle mx-auto ">Teacher's Dashboard.</span>
+        <div class=" pl-5 pr-3 py-4   bg-gray-100 shadow-md  ">
+          <span class=" subtitle ">Teacher's Dashboard.</span>
           </div>
           <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 center text-left border-opacity-60 border grid-cols-8  gap-2">
               <div class="col-span-3">Topic</div>
@@ -27,18 +27,19 @@
               <div class="col-span-2">Generate Story</div>
 
           </div>
-          <div v-for="item in teacherSelections" :key="item.id" class="px-2" 
+          <div v-for="item in teacherSelections" :key="item.id" class="px-2 " 
           :class="[item.id%2==1 ? 'bg-yellow-300': 'bg-yellow-200']">
+          <button @click="removeTopic(item.id)" class="bg-red-500 px-3 text-white text-center mr-2 absolute left-2 w-5 h-5">X</button>
             <TodaysTopics :topic="item.topic" :theme="item.theme" :tries="item.tries" />
           </div>
           <div class=" flex justify-between py-2">
             <input type="text" v-model="newTopic" class="bg-white w-3/4 border border-black rounded shadow-md pl-4 "
              placeholder="Topic to be taught today, e.g: mitochondria"> 
-            <button class="bg-green-600 rounded px-4 w-1/4 text-white shadow-md py-1" 
+            <button class="bg-green-500 rounded px-4 w-1/4 text-white shadow-md py-1" 
             @click="addTopic(newTopic)">Add</button>
             </div>          
         </div>
-        <div class="px-4 pr-3 py-4   bg-gray-100 h-1/2 shadow-md w-1/2 ">
+        <div class="px-4 pr-3 py-4   bg-gray-100 shadow-md w-1/2 ">
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
           </div>
@@ -62,11 +63,14 @@ export default {
   },
   methods: {
     addTopic(newTopic){
-      if(newTopic != null){
+      if(newTopic !== ''){
       this.teacherSelections.push({'id':this.teacherSelections.length+1,
       'topic':this.newTopic,'tries':'1'})
       this.newTopic = ''
       }
+    },
+    removeTopic(i){
+      this.teacherSelections.splice(Number(i)-1,1)
     }
   }
 }
