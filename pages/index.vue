@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        Alfee
+       Project Alfee
       </h1>
       <div class="links">
         <a
@@ -15,7 +15,7 @@
           Documentation
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/suharshtyagii/alfee"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
