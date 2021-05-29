@@ -13,7 +13,7 @@
             
           </div>
             <button class="bg-purple-600 rounded px-4 w-1/4 text-white shadow-md py-1" 
-            @click="generateStory">Generate Story</button>
+            @click="generateStory">Generate !</button>
             </div>    
 
   </div>
