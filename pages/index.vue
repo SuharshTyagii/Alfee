@@ -23,7 +23,7 @@
           <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 center text-left border-opacity-60 border grid-cols-8  gap-2">
               <div class="col-span-3">Topic</div>
               <div class="col-span-2">Theme</div>
-              <div>Tries</div>
+              <div>Stories</div>
               <div class="col-span-2">Generate Story</div>
 
           </div>
