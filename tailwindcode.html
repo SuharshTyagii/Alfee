@@ -8,98 +8,95 @@
   Feel free to play with this example if you're just learning, or trash it and
   start from scratch if you know enough to be dangerous. Have fun!
 -->
- <div>
-    <div  class="container">
-      <h1 class="title">
-        Alfee 
-      </h1>     
-        </div>
-        <h2 class=" text-4xl  text-yellow-600 text-center">
-          - A helper brain for the teacher.
-        </h2>
-        <br>
-        <br>
-      <div class=" text-center text-xl">
-       Showing interfaces for - <span class="text-gray-500"> student</span> / 
-       <span class="text-gray-500">teacher</span> / <span class=" text-yellow-600">both</span>.
+<div>
+  <div class="container">
+    <h1 class="title">
+      Alfee
+    </h1>
+  </div>
+  <h2 class=" text-4xl  text-yellow-600 text-center">
+    - A helper brain for the teacher.
+  </h2>
+  <br>
+  <br>
+  <div class=" text-center text-xl">
+    Showing interfaces for - <span class="text-gray-500"> student</span> /
+    <span class="text-gray-500">teacher</span> / <span class=" text-yellow-600">both</span>.
+  </div>
+  <br>
+  <div class="userInterface flex justify-around ">
+    <div class="w-1/2 text-center px-4">
+      <div class=" pl-5 pr-3 py-4   bg-gray-100 h-1/2 shadow-md  ">
+        <span class=" subtitle mx-auto ">Teacher's Dashboard.</span>
       </div>
-      <br>
-      <div class="userInterface flex justify-around ">
-        <div class="w-1/2 text-center px-4">
-        <div class=" pl-5 pr-3 py-4   bg-gray-100 h-1/2 shadow-md  ">
-          <span class=" subtitle mx-auto ">Teacher's Dashboard.</span>
-          </div>
-          <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 center text-left border-opacity-60 border grid-cols-8  gap-2">
-              <div class="col-span-3">Topic</div>
-              <div class="col-span-2">Theme</div>
-              <div>Tries</div>
-              <div class="col-span-2">Generate Story</div>
+      <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 
+          center text-left border-opacity-60 border grid-cols-8  gap-2">
+        <div class="col-span-3">Topic</div>
+        <div class="col-span-2">Theme</div>
+        <div>Tries</div>
+        <div class="col-span-2">Generate Story</div>
 
-          </div>
+      </div>
 
-          <div class=" flex justify-between py-2">
-            <input type="text" class="bg-white w-2/5  rounded shadow-md pl-4 " placeholder="Topics to be taught today, e.g: mitochondria"> 
-          <select name="" id="" class="border border-gray-400 px-4">
-            <option>Sci-fi</option>
-           <option>Fantasy</option>
-           <option>Rap</option>
-          </select>
-          <div>
-          <select name="" class="border border-gray-400 px-4 py-1" id="">
-            <option >1</option>
-           <option>2</option>
-         <option>3</option>
-        <option>4</option>
-     <option>5</option>
-          </select>
-          </div>
-            <button class="bg-green-600 rounded px-4 w-1/4 text-white shadow-md py-1">Add topic</button>
-            </div>          
-        </div>
-        <div class="px-4 pr-3 py-4   bg-gray-100 h-1/2 shadow-md w-1/2 ">
-          <div class="text-center">
-            <span class=" subtitle   ">Student's Dashboard.</span>
-          </div>
-          
+      <div class=" flex justify-between py-2">
+        <input type="text" class="bg-white w-3/4  rounded shadow-md pl-4 "
+          placeholder="Topic to be taught today, e.g: mitochondria">
+        <button class="bg-green-600  rounded-full px-4  text-white shadow-md py-1">Add</button>
+      </div>
+
+
+      <div class="bg-gray-100 pt-3 text-center h-1/2">
+        <span class="subtitle text-purple-300 py-5 ">Generated Stories</span>
+        <div class="flex ">
+          <textbox class="border border-black px-4 py-3 rounded-2xl">awdawdawdawd </textbox>
+          <button></button>
         </div>
       </div>
     </div>
+    <div class="px-4 pr-3 py-4   bg-gray-100 h-1/2 shadow-md w-1/2 ">
+      <div class="text-center">
+        <span class=" subtitle   ">Student's Dashboard.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <style>
   .container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  .title {
+    font-family:
+      'Quicksand',
+      'Source Sans Pro',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+    display: block;
+    font-weight: 300;
+    font-size: 100px;
+    color: #35495e;
+    letter-spacing: 1px;
+  }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  .subtitle {
+    font-weight: 300;
+    font-size: 42px;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
+  }
 
-.links {
-  padding-top: 15px;
-}
+  .links {
+    padding-top: 15px;
+  }
 </style>
