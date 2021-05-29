@@ -1,5 +1,14 @@
-<template>
-   <div>
+<!--
+  Welcome to Tailwind Play, the official Tailwind CSS playground!
+
+  Everything here works just like it does when you're running Tailwind locally
+  with a real build pipeline. You can customize your config file, use features
+  like `@apply`, or even add third-party plugins.
+
+  Feel free to play with this example if you're just learning, or trash it and
+  start from scratch if you know enough to be dangerous. Have fun!
+-->
+ <div>
     <div  class="container">
       <h1 class="title">
         Alfee 
@@ -27,15 +36,24 @@
               <div class="col-span-2">Generate Story</div>
 
           </div>
-          <div v-for="item in teacherSelections" :key="item.id" class="px-2" 
-          :class="[item.id%2==1 ? 'bg-yellow-300': 'bg-yellow-200']">
-            <TodaysTopics :topic="item.topic" :theme="item.theme" :tries="item.tries" />
-          </div>
+
           <div class=" flex justify-between py-2">
-            <input type="text" v-model="newTopic" class="bg-white w-3/4 border border-black rounded shadow-md pl-4 "
-             placeholder="Topic to be taught today, e.g: mitochondria"> 
-            <button class="bg-green-600 rounded px-4 w-1/4 text-white shadow-md py-1" 
-            @click="addTopic(newTopic)">Add</button>
+            <input type="text" class="bg-white w-2/5  rounded shadow-md pl-4 " placeholder="Topics to be taught today, e.g: mitochondria"> 
+          <select name="" id="" class="border border-gray-400 px-4">
+            <option>Sci-fi</option>
+           <option>Fantasy</option>
+           <option>Rap</option>
+          </select>
+          <div>
+          <select name="" class="border border-gray-400 px-4 py-1" id="">
+            <option >1</option>
+           <option>2</option>
+         <option>3</option>
+        <option>4</option>
+     <option>5</option>
+          </select>
+          </div>
+            <button class="bg-green-600 rounded px-4 w-1/4 text-white shadow-md py-1">Add topic</button>
             </div>          
         </div>
         <div class="px-4 pr-3 py-4   bg-gray-100 h-1/2 shadow-md w-1/2 ">
@@ -46,43 +64,12 @@
         </div>
       </div>
     </div>
-</template>
-
-<script>
-export default {
-  data(){
-    return{
-      teacherSelections:[{'id':1,'topic':'Mitochondria',
-      'theme':'sci-fi', 
-      'tries':'1'}],
-      newTopic: '',
-      triesNum: '1',
-
-    }
-  },
-  methods: {
-    addTopic(newTopic){
-      if(newTopic != null){
-      this.teacherSelections.push({'id':this.teacherSelections.length+1,
-      'topic':this.newTopic,'tries':'1'})
-      this.newTopic = ''
-      }
-    }
-  }
-}
-</script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
+  .container {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
