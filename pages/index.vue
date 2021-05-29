@@ -70,7 +70,7 @@ export default {
       teacherSelections:[{'id':1,'topic':'Mitochondria',
       'theme':'sci-fi', 
       'tries':'1'},
-      {'id':2,'topic':'Fact about Uranus',
+      {'id':2,'topic':'The Solar System',
       'theme':'rap', 
       'tries':'1'}],
       newTopic: '',
