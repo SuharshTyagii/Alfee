@@ -11,8 +11,10 @@ const getRandomArbitrary = (min, max) => {
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      generatedStories: ['Mitochondria are the powerhouses that provide energy for your body to do its work. They use oxygen in a process called respiration to create adenosine triphosphate or ATP which provides energy for all of your cells. The mitochondria also use glucose as an energy source through a process called glycolysis which creates pyruvate. The pyruvate is then used in cellular respiration (also known'],
-      editedStories:['this got edited']
+      generatedStories: [
+        // 'Mitochondria was the first one to start rapping, which started the apopto-autog rap war! Mitochondria tried to stop Apoptosis with a few phagocytotic bars, but he got hit by Autophagy\'s nuclear bombs and lost the battle.He then went into hiding for decades until his son Cytochrome c came out of hiding and defeated Autophagy in an epic rap battle that changed society'
+      ],
+        editedStories:['this got edited']
     },
     getters: {
 

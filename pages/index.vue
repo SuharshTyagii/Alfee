@@ -78,9 +78,9 @@
 
                 <div class="bg-gray-100 w-full pt-3 text-center">
               <span class="subtitle text-purple-300 py-5 ">Student's Responses</span>
-                <div v-for="item in studentQuestions" class="bg-yellow-100 py-4 my-2 " :key="item" >
-                   <div class="bg-yellow-300 px-4 py-4 text-left">
-                   <span class="font-bold">>></span>   {{item}}
+                <div v-for="item in chatsAll"  class="bg-yellow-100 py-4 my-2 " :key="item" >
+                   <div v-if="item.saidBy=='Student'" class="bg-yellow-300 px-4 py-4 text-left">
+                   <span class="font-bold">>></span>   {{item.message}}
                     </div>
                 </div>
 
