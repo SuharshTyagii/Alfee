@@ -151,7 +151,7 @@ import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
-      showFor:1,
+      showFor:2,
       showVirbe:false,
       studentQues : 'I wish it could do rap battles',
       studentQuestions : ['Ughh. Solar Systems SO Boring!!' ],
