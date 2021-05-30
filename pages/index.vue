@@ -1,5 +1,5 @@
 <template>
-   <div class="pb-20">
+   <div class="pb-40">
     <div  class="container">
       <h1 class="title">
         Alfee 
@@ -36,7 +36,7 @@
           <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 center text-left border-opacity-60 border grid-cols-8  gap-2">
               <div class="col-span-3">Topic</div>
               <div class="col-span-2">Theme</div>
-              <div>Stories</div>
+              <div>Stories Count</div>
               <div class="col-span-2">Generate Story</div>
 
           </div>
@@ -75,7 +75,11 @@
 
                 <div class="bg-gray-100 w-full pt-3 text-center">
               <span class="subtitle text-purple-300 py-5 ">Student's Responses</span>
-               
+                <div v-for="item in studentQuestions" class="bg-yellow-100 py-4 my-2 " :key="item" >
+                   <div class="bg-yellow-300 px-4 py-4 text-left">
+                   <span class="font-bold">>></span>   {{item}}
+                    </div>
+                </div>
 
               </div>  
 
@@ -91,18 +95,33 @@
                     </div>
 
               </div>
+                  
+                  <!-- student puts chat -->
+                <div  v-for="item in studentQuestions" :key="item" class="flex flex-col py-4" >
+                   <div class="flex  items-center justify-items-end flex-row-reverse text-xl bg-green-200 rounded-md "  >
+                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/student_pp.png" alt="Alfee"/>
+            <div class="text-right px-4">{{item}}</div>
+
+                    </div>
+                    </div>
+              <div>
+
+              </div>
           <!-- student chat part -->
               <div class="flex float-left w-full h-12">
-                <input type="text" placeholder="Ask your questions " 
+                <input type="text" v-model="studentQues" placeholder="Ask your questions " 
                 class="pl-4  w-3/4 bg-gray-200 rounded-full border shadow-md border-gray-500">
-                <button class="bg-green-500 w-1/4 rounded-full shadow-md">Ask</button>
+                <button @click="studentAsked" class="bg-green-500 w-1/4 rounded-full shadow-md">Ask</button>
               </div>
             </div>
           </div>
 
-               <div class="text-center pt-12 shadow-md">
+               <div class="text-center mt-32 pt-12 bg-blue-200 shadow-md">
             <span class=" subtitle   ">Student's Dashboard (Experimental)</span>
-            <div class="h-screen w-full">
+            <button @click="showVirbe=(!showVirbe)"
+             class="rounded-sm px-6 py-4 bg-purple-300 ">
+             Show/Hide >> </button>
+            <div v-if="showVirbe" class="h-screen w-full">
                 <iframe class="h-full w-full" src="https://web-plugin.virbe.app/api/v1/live-preview.html?id=4ba26baf-dbb6-4d95-acb5-d341b1c2c2da&s=true" title="W3Schools Free Online Web Tutorials">
               </iframe>
             </div>
@@ -121,16 +140,19 @@ export default {
   data(){
     return{
       showFor:2,
+      showVirbe:false,
+      studentQues : 'I wish it could do rap battles',
+      studentQuestions : ['Mitochondria is so boring', ],
       username:'teamalfee',
       password:'',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
       'theme':'sci-fi', 
-      'tries':'1'},
+      'tries':'3'},
       {'id':2,'topic':'The Solar System',
       'theme':'rap', 
-      'tries':'1'}],
+      'tries':'3'}],
       newTopic: '',
-      triesNum: '1',
+      triesNum: '3',
       studentChats : ['Hello Class', 'This is Alfee.'],
     }
   },
@@ -146,6 +168,10 @@ export default {
   methods: {
     showForChange(i){
       this.showFor=parseInt(i)
+    },
+    studentAsked(i){
+      this.studentQuestions.push(this.studentQues)
+      this.studentQues = ''
     },
     addTopic(newTopic){
       if(newTopic !== ''){
