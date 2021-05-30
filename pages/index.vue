@@ -99,7 +99,7 @@
                   <!-- student puts chat -->
                 <div  v-for="item in studentQuestions" :key="item" class="flex flex-col py-4" >
                    <div class="flex  items-center justify-items-end flex-row-reverse text-xl bg-green-200 rounded-md "  >
-                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/student_pp.png" alt="Alfee"/>
+                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/student.png" alt="Alfee"/>
             <div class="text-right px-4">{{item}}</div>
 
                     </div>
