@@ -61,7 +61,8 @@
                    bg-white text-left" rows="7"
                     :value="item">
                     </textarea>
-                   <button @click="sendToStudent(item)" class="bg-green-400 text-white w-1/6 px-4 py-4 rounded-2xl center " alt ="Send to chat">              
+                   <button @click="sendToStudents(item)" 
+                   class="bg-green-400 text-white w-1/6 px-4 shadow-lg pl-4 py-4 rounded-2xl center " alt ="Send to chat">              
 <svg  height="24" viewBox="0 0 24 24" class="mx-auto " width="24" xmlns="http://www.w3.org/2000/svg"><path d="m8.75 17.612v4.638c0 .324.208.611.516.713.077.025.156.037.234.037.234 0 .46-.11.604-.306l2.713-3.692z"/><path d="m23.685.139c-.23-.163-.532-.185-.782-.054l-22.5 11.75c-.266.139-.423.423-.401.722.023.3.222.556.505.653l6.255 2.138 13.321-11.39-10.308 12.419 10.483 3.583c.078.026.16.04.242.04.136 0 .271-.037.39-.109.19-.116.319-.311.352-.53l2.75-18.5c.041-.28-.077-.558-.307-.722z"/></svg>
                     </button>
               </div>
@@ -72,6 +73,15 @@
         <div class="px-4 pr-3 py-4   bg-gray-100 shadow-md w-1/2 ">
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
+            <div>
+              <div  v-for="item in studentChats" :key="item" class="flex flex-col py-4">
+                  <div class="flex float-left items-center text-xl bg-blue-200 rounded-md "  >
+                  <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/alfee_pp.png" alt="Alfee"/>
+            <div class="text-left">{{item}}</div>
+                    </div>
+
+              </div>
+            </div>
           </div>
           
         </div>
@@ -95,7 +105,7 @@ export default {
       'tries':'1'}],
       newTopic: '',
       triesNum: '1',
-
+      studentChats : ['Hello Class', 'This is Alfee.'],
     }
   },
   computed : {
@@ -117,6 +127,9 @@ export default {
     },
     removeTopic(i){
       this.teacherSelections.splice(Number(i)-1,1)
+    },
+    sendToStudents(i){
+      this.studentChats.push(String(i))
     }
   }
 }

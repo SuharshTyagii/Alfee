@@ -11,7 +11,7 @@ const getRandomArbitrary = (min, max) => {
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      generatedStories: [],
+      generatedStories: ['Mitochondria are the powerhouses that provide energy for your body to do its work. They use oxygen in a process called respiration to create adenosine triphosphate or ATP which provides energy for all of your cells. The mitochondria also use glucose as an energy source through a process called glycolysis which creates pyruvate. The pyruvate is then used in cellular respiration (also known'],
       editedStories:['this got edited']
     },
     getters: {
