@@ -62,7 +62,7 @@
                     Please click generate to generate some stories first. Make sure the password is there in the top right corner of the screen.
                 </div>
                 <div v-else  class="flex justify-between py-4 "
-                 v-for="item in getGeneratedStories" :key="item">
+                 v-for="item in getGeneratedStories.slice().reverse()" :key="item">
                   <textarea class="border border-black text-lg font-semibold px-4 py-3 h-full
                   w-5/6  rounded-2xl 
                    bg-white text-left" rows="8"
@@ -154,7 +154,7 @@ export default {
       showFor:1,
       showVirbe:false,
       studentQues : 'I wish it could do rap battles',
-      studentQuestions : ['Mitochondria is so boring' ],
+      studentQuestions : ['Ughh. Solar Systems SO Boring!!' ],
       username:'teamalfee',
       password:'alfeerocks',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
@@ -167,7 +167,7 @@ export default {
       triesNum: '3',
     chatsAll:[{'message': 'Hello Class', 'saidBy':'Alfee'},
     {'message': 'This is Alfee, let me know if you need help with anything', 'saidBy':'Alfee'},
-    {'message':'Mitochondria is so boring', 'saidBy':'Student'}],
+    {'message':'Ughh. Solar Systems SO Boring!', 'saidBy':'Student'}],
      studentChats : ['Hello Class', 'This is Alfee.'],
     }
   },
