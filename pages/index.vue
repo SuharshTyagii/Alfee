@@ -4,6 +4,15 @@
       <h1 class="title">
         Alfee 
       </h1>     
+      <div class="absolute right-5 top-5 shadow-lg">
+        <div class="inline-flex">
+          <label class="px-2 mx-2 font-semibold text-lg" for="">Username</label>
+          <input class="px-2 border border-black" v-model="username" type="text">
+          <label class="px-2 font-semibold text-lg" for="">Password</label>
+          <input class="border border-black" v-model="password" type="password">
+          <!-- <span></span> -->
+        </div>
+      </div>
         </div>
         <h2 class=" text-4xl  text-yellow-600 text-center">
           - A helper brain for the teacher.
@@ -30,7 +39,8 @@
           <div v-for="item in teacherSelections" :key="item.id" class="px-2 " 
           :class="[item.id%2==1 ? 'bg-yellow-300': 'bg-yellow-200']">
           <button @click="removeTopic(item.id)" class="bg-red-500 px-3 text-white text-center mr-2 absolute left-2 w-5 h-5">X</button>
-            <TodaysTopics :topic="item.topic" :theme="item.theme" :tries="item.tries" />
+            <TodaysTopics :username="username" :password="password"
+             :topic="item.topic" :theme="item.theme" :tries="item.tries" />
           </div>
           <div class=" flex justify-between py-2">
             <input type="text" v-model="newTopic" class="bg-white w-3/4 border border-black rounded shadow-md pl-4 "
@@ -67,6 +77,8 @@
 export default {
   data(){
     return{
+      username:'teamalfee',
+      password:'',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
       'theme':'sci-fi', 
       'tries':'1'},
