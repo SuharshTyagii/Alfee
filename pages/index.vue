@@ -17,6 +17,9 @@
         <h2 class=" text-4xl  text-yellow-600 text-center">
           - A helper brain for the teacher.
         </h2>
+        <h2 class="text-3xl text-purple-800 text-center">
+          Powered via GPT-3
+        </h2>
         <br>
         <br>
       <div class=" text-center text-xl">
