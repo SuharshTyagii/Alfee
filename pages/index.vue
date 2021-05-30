@@ -65,8 +65,8 @@
                  v-for="item in getGeneratedStories" :key="item">
                   <textarea class="border border-black text-lg font-semibold px-4 py-3 h-full
                   w-5/6  rounded-2xl 
-                   bg-white text-left" rows="7"
-                    :value="item">
+                   bg-white text-left" rows="8"
+                    :value="item" >
                     </textarea>
                    <button @click="sendToStudents(item)" 
                    class="bg-green-400 text-white w-1/6 px-4 shadow-lg pl-4 py-4 rounded-2xl center " alt ="Send to chat">              
@@ -151,7 +151,7 @@ import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
-      showFor:2,
+      showFor:1,
       showVirbe:false,
       studentQues : 'I wish it could do rap battles',
       studentQuestions : ['Mitochondria is so boring' ],
