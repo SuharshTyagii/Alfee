@@ -8,8 +8,8 @@
         <div class="inline-flex">
           <label class="px-2 mx-2 font-semibold text-lg" for="">Username</label>
           <input class="px-2 border border-black" v-model="username" type="text">
-          <label class="px-2 font-semibold text-lg" for="">Password</label>
-          <input class="border border-black" type="password" v-model="password" >
+          <!-- <label class="px-2 font-semibold text-lg" for="">Password</label> -->
+          <!-- <input class="border border-black" type="password" v-model="password" > -->
           <!-- <span></span> -->
         </div>
       </div>
@@ -156,7 +156,7 @@ export default {
       studentQues : 'I wish it could do rap battles',
       studentQuestions : ['Mitochondria is so boring' ],
       username:'teamalfee',
-      password:'',
+      password:'alfeerocks',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
       'theme':'sci-fi', 
       'tries':'3'},
