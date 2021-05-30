@@ -27,8 +27,8 @@ props:['id', 'topic','theme','tries',
 'username','password'],
 data(){
   return{
-    selectedTries : 1,
-    selectedTheme: 'sciFi',
+    selectedTries : 3,
+    selectedTheme: 'rap',
     disabled: false,
     generateButtonText: 'Generate !'
   }

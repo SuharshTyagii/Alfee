@@ -15,10 +15,10 @@
       </div>
         </div>
         <h2 class=" text-4xl  text-yellow-600 text-center">
-          - A helper brain for the teacher.
+          - Turn <span class="font-semibold">Teachers</span> into <span class="text-yellow-600 font-bold">Super-Teachers</span>  using AI.
         </h2>
-        <h2 class="text-3xl text-purple-800 text-center">
-          Powered via GPT-3
+        <h2 class="text-2xl pt-2 text-black-900 text-center">
+          [Powered via GPT-3]
         </h2>
         <br>
         <br>
