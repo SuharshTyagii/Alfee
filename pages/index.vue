@@ -20,13 +20,17 @@
         <br>
         <br>
       <div class=" text-center text-xl">
-       Showing interfaces for - <span class="text-gray-500"> student</span> / 
-       <span class="text-gray-500">teacher</span> / <span class=" text-yellow-600">both</span>.
+       Showing interfaces for - <span @click="showForChange(0)" class="cursor-pointer"
+       :class="[showFor==0?'text-yellow-600':'text-gray-500']">teacher</span> / 
+       <span class="cursor-pointer" @click="showForChange(1)" 
+       :class="[showFor==1?'text-yellow-600':'text-gray-500']">student</span> / 
+       <span class="cursor-pointer" @click="showForChange(2)"  
+       :class="[showFor==2?'text-yellow-600':'text-gray-500']">both</span>.
       </div>
       <br>
       <div class="userInterface flex justify-around ">
-         <div class="w-1/2 text-center px-4"> <!-- teachers section begins here -->
-        <div class=" pl-5 pr-3 py-4   bg-gray-100 shadow-md  ">
+         <div v-if="showFor==0 || showFor ==2" class="w-1/2 text-center px-4"> <!-- teachers section begins here -->
+        <div class=" pl-5 pr-3 py-4   bg-yellow-100 shadow-md  ">
           <span class=" subtitle ">Teacher's Dashboard.</span>
           </div>
           <div class="grid pt-2 pb-1 font-semibold border-gray-400 px-6 center text-left border-opacity-60 border grid-cols-8  gap-2">
@@ -49,12 +53,12 @@
             @click="addTopic(newTopic)">Add</button>
             </div>
           <!-- Generated stories -->
-              <div class="bg-gray-100 w-full pt-3 text-center h-1/2">
+              <div class="bg-yellow-100 w-full pt-3 text-center h-1/2">
               <span class="subtitle text-purple-300 py-5 ">Generated Stories</span>
                 <div class="text-lg" v-if="getGeneratedStories.length==0">
                     Please click generate to generate some stories first. Make sure the password is there in the top right corner of the screen.
                 </div>
-                <div v-else  class="flex justify-between "
+                <div v-else  class="flex justify-between py-4 "
                  v-for="item in getGeneratedStories" :key="item">
                   <textarea class="border border-black text-lg font-semibold px-4 py-3 h-full
                   w-5/6  rounded-2xl 
@@ -76,7 +80,7 @@
               </div>  
 
         </div>
-        <div class="px-4 pr-3 py-4 h-full  bg-gray-200 shadow-md w-1/2 ">
+        <div v-if="showFor==1 || showFor ==2" class="px-4 pr-3 py-4 h-full  bg-gray-200 shadow-md w-1/2 ">
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
             <div class="pb-10">
@@ -116,6 +120,7 @@ import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
+      showFor:2,
       username:'teamalfee',
       password:'',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
@@ -139,6 +144,9 @@ export default {
   //   }
   // },
   methods: {
+    showForChange(i){
+      this.showFor=parseInt(i)
+    },
     addTopic(newTopic){
       if(newTopic !== ''){
       this.teacherSelections.push({'id':this.teacherSelections.length+1,

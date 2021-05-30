@@ -8,8 +8,9 @@
            <option value="rap">Rap</option>
           </select>
           <div>
-          <input type="number" max="5" min="1"
-            v-model="selectedTries"  class="border border-gray-400 px-6 py-4 " id="">
+          <input type="number" max="3" min="1"
+            v-model="selectedTries" 
+            :class="[selectedTries>3?'bg-red-400 text-white': 'bg-green-200']"  class="border border-gray-400 px-6 py-4 " id="">
             
           </div>
             <button class="rounded px-4 w-1/4 text-white shadow-md py-1" 
