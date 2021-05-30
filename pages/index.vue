@@ -48,7 +48,7 @@
             <button class="bg-green-500 rounded px-4 w-1/4 text-white shadow-md py-1" 
             @click="addTopic(newTopic)">Add</button>
             </div>
-          
+          <!-- Generated stories -->
               <div class="bg-gray-100 w-full pt-3 text-center h-1/2">
               <span class="subtitle text-purple-300 py-5 ">Generated Stories</span>
                 <div class="text-lg" v-if="getGeneratedStories.length==0">
@@ -67,13 +67,19 @@
                     </button>
               </div>
 
+              </div>
+
+                <div class="bg-gray-100 w-full pt-3 text-center">
+              <span class="subtitle text-purple-300 py-5 ">Student's Responses</span>
+               
+
               </div>  
 
         </div>
-        <div class="px-4 pr-3 py-4   bg-gray-100 shadow-md w-1/2 ">
+        <div class="px-4 pr-3 py-4 h-full  bg-gray-200 shadow-md w-1/2 ">
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
-            <div>
+            <div class="pb-10">
               <div  v-for="item in studentChats" :key="item" class="flex flex-col py-4">
                   <div class="flex float-left items-center text-xl bg-blue-200 rounded-md "  >
                   <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/alfee_pp.png" alt="Alfee"/>
@@ -81,8 +87,23 @@
                     </div>
 
               </div>
+          <!-- student chat part -->
+              <div class="flex float-left w-full h-12">
+                <input type="text" placeholder="Ask your questions " 
+                class="pl-4  w-3/4 bg-gray-200 rounded-full border shadow-md border-gray-500">
+                <button class="bg-green-500 w-1/4 rounded-full shadow-md">Ask</button>
+              </div>
             </div>
           </div>
+
+               <div class="text-center pt-12 shadow-md">
+            <span class=" subtitle   ">Student's Dashboard (Experimental)</span>
+            <div class="h-screen w-full">
+                <iframe class="h-full w-full" src="https://web-plugin.virbe.app/api/v1/live-preview.html?id=4ba26baf-dbb6-4d95-acb5-d341b1c2c2da&s=true" title="W3Schools Free Online Web Tutorials">
+              </iframe>
+            </div>
+          </div>
+
           
         </div>
       </div>
