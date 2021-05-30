@@ -142,7 +142,7 @@ export default {
       showFor:2,
       showVirbe:false,
       studentQues : 'I wish it could do rap battles',
-      studentQuestions : ['Mitochondria is so boring', ],
+      studentQuestions : ['Mitochondria is so boring' ],
       username:'teamalfee',
       password:'',
       teacherSelections:[{'id':1,'topic':'Mitochondria',
@@ -153,7 +153,8 @@ export default {
       'tries':'3'}],
       newTopic: '',
       triesNum: '3',
-      studentChats : ['Hello Class', 'This is Alfee.'],
+     
+     studentChats : ['Hello Class', 'This is Alfee.'],
     }
   },
   computed : {
