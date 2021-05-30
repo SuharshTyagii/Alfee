@@ -40,18 +40,18 @@ methods:{
     const headers = {
       'Content-Type': 'application/json',
     "Access-Control-Allow-Origin":"*",
-    
+    "Authorization" : "Basic" + window.btoa(this.username+':'+this.password)
     }
     // console.log('generating stories for ' + this.topic)
   const res = this.$axios.post('https://robmcknight.pythonanywhere.com/generate', 
   {
-    "topic":"jupiter",
-    "theme":"sci-fi",
-    "tries":"1"
+    "topic":this.topic,
+    "theme":this.selectedTheme,
+    "tries":this.selectedTries
   }, 
-  {
-    headers : headers,
-  },
+  // {
+  //   headers : headers,
+  // },
   {
     auth: {
     username:this.username,
@@ -63,9 +63,19 @@ methods:{
       console.log(res.data)
       this.disabled= false
       this.generateButtonText = 'Generate Again'
+      for (let i=0; i < res.data.stories.length; i++)
+      {
+        this.$store.state.generatedStories.push(res.data.stories[i])
+        console.log('pushing this to stories')
+        console.log(res.data.stories)
+       this.$store.state.editedStories.push(res.data.stories[i])
+        }
+
     }
     ).catch((err)=> {
       this.disabled= false
+      console.log(JSON.stringify(res.data))
+      console.log(err)
       this.generateButtonText = 'Try Again.'
     })
     }

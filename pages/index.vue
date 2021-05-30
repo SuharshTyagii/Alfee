@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="pb-20">
     <div  class="container">
       <h1 class="title">
         Alfee 
@@ -9,7 +9,7 @@
           <label class="px-2 mx-2 font-semibold text-lg" for="">Username</label>
           <input class="px-2 border border-black" v-model="username" type="text">
           <label class="px-2 font-semibold text-lg" for="">Password</label>
-          <input class="border border-black" v-model="password" type="password">
+          <input class="border border-black" type="password" v-model="password" >
           <!-- <span></span> -->
         </div>
       </div>
@@ -51,13 +51,19 @@
           
               <div class="bg-gray-100 w-full pt-3 text-center h-1/2">
               <span class="subtitle text-purple-300 py-5 ">Generated Stories</span>
-              <div class="flex justify-between ">
-                  <textarea class="border border-black px-4 py-3 w-5/6 rounded-2xl
-                   bg-white text-left">Just edit me & send me already </textarea>
-                   <button class="bg-green-400 text-white w-1/6 rounded-2xl center " alt ="Send to chat">              
+                <div class="text-lg" v-if="getGeneratedStories.length==0">
+                    Please click generate to generate some stories first. Make sure the password is there in the top right corner of the screen.
+                </div>
+                <div v-else  class="flex justify-between "
+                 v-for="item in getGeneratedStories" :key="item">
+                  <textarea class="border border-black text-lg font-semibold px-4 py-3 h-full
+                  w-5/6  rounded-2xl 
+                   bg-white text-left" rows="7"
+                    :value="item">
+                    </textarea>
+                   <button @click="sendToStudent(item)" class="bg-green-400 text-white w-1/6 px-4 py-4 rounded-2xl center " alt ="Send to chat">              
 <svg  height="24" viewBox="0 0 24 24" class="mx-auto " width="24" xmlns="http://www.w3.org/2000/svg"><path d="m8.75 17.612v4.638c0 .324.208.611.516.713.077.025.156.037.234.037.234 0 .46-.11.604-.306l2.713-3.692z"/><path d="m23.685.139c-.23-.163-.532-.185-.782-.054l-22.5 11.75c-.266.139-.423.423-.401.722.023.3.222.556.505.653l6.255 2.138 13.321-11.39-10.308 12.419 10.483 3.583c.078.026.16.04.242.04.136 0 .271-.037.39-.109.19-.116.319-.311.352-.53l2.75-18.5c.041-.28-.077-.558-.307-.722z"/></svg>
                     </button>
-
               </div>
 
               </div>  
@@ -74,6 +80,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   data(){
     return{
@@ -90,6 +98,15 @@ export default {
 
     }
   },
+  computed : {
+      ...mapGetters(['getGeneratedStories', 'getEditedStories'])
+
+  },
+  // watch:{
+  //   getGeneratedStories : function(getGeneratedStories, ){
+  //     this.localStories.push()
+  //   }
+  // },
   methods: {
     addTopic(newTopic){
       if(newTopic !== ''){
@@ -118,7 +135,10 @@ export default {
   align-items: center;
   text-align: center;
 }
-
+#autoresizing {
+            display: block;
+      
+        }
 .title {
   font-family:
     'Quicksand',
