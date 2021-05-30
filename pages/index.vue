@@ -129,8 +129,9 @@
 
                <div class="text-center mt-32 pt-12 bg-blue-200 shadow-md">
             <span class=" subtitle   ">Student's Dashboard (Experimental)</span>
+            <br>
             <button @click="showVirbe=(!showVirbe)"
-             class="rounded-sm px-6 py-4 bg-purple-300 ">
+             class="rounded-sm px-6 py-4 bg-purple-300 w-full">
              Show/Hide</button>
             <div v-if="showVirbe" class="h-screen w-full">
                 <iframe class="h-full w-full" src="https://web-plugin.virbe.app/api/v1/live-preview.html?id=4ba26baf-dbb6-4d95-acb5-d341b1c2c2da&s=true" title="W3Schools Free Online Web Tutorials">
