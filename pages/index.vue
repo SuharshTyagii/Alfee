@@ -91,22 +91,30 @@
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
             <div class="pb-10">
-              <div  v-for="item in studentChats" :key="item" class="flex flex-col py-4">
-                  <div class="flex float-left items-center text-xl bg-blue-200 rounded-md "  >
+              <div  v-for="item in chatsAll" :key="item" class="flex flex-col py-4">
+                  <div v-if="item.saidBy=='Alfee'" class="flex float-left items-center text-xl bg-blue-200 rounded-md "  >
                   <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/alfee_pp.png" alt="Alfee"/>
-            <div class="text-left">{{item}}</div>
+            <div class="text-left">{{item.message}}</div>
+                    </div>
+
+  <div v-else class="flex  items-center justify-items-end flex-row-reverse text-xl bg-green-200 rounded-md "  >
+                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full"
+                  src="~/static/student.png" alt="Alfee"/>
+            <div class="text-right px-4">{{item.message}}</div>
+
                     </div>
 
               </div>
                   
                   <!-- student puts chat -->
-                <div  v-for="item in studentQuestions" :key="item" class="flex flex-col py-4" >
+                <!-- <div  v-for="item in studentQuestions" :key="item" class="flex flex-col py-4" >
                    <div class="flex  items-center justify-items-end flex-row-reverse text-xl bg-green-200 rounded-md "  >
-                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full" src="~/static/student.png" alt="Alfee"/>
+                 <img class="inline object-cover w-16 h-16 mr-2 rounded-full"
+                  src="~/static/student.png" alt="Alfee"/>
             <div class="text-right px-4">{{item}}</div>
 
                     </div>
-                    </div>
+                    </div> -->
               <div>
 
               </div>
@@ -156,7 +164,9 @@ export default {
       'tries':'3'}],
       newTopic: '',
       triesNum: '3',
-     
+    chatsAll:[{'message': 'Hello Class', 'saidBy':'Alfee'},
+    {'message': 'This is Alfee, let me know if you need help with anything', 'saidBy':'Alfee'},
+    {'message':'Mitochondria is so boring', 'saidBy':'Student'}],
      studentChats : ['Hello Class', 'This is Alfee.'],
     }
   },
@@ -174,7 +184,7 @@ export default {
       this.showFor=parseInt(i)
     },
     studentAsked(i){
-      this.studentQuestions.push(this.studentQues)
+      this.chatsAll.push({'message':this.studentQues, 'saidBy':'Student'})
       this.studentQues = ''
     },
     addTopic(newTopic){
@@ -188,7 +198,7 @@ export default {
       this.teacherSelections.splice(Number(i)-1,1)
     },
     sendToStudents(i){
-      this.studentChats.push(String(i))
+      this.chatsAll.push({'message':String(i), 'saidBy':'Alfee'})
     }
   }
 }
