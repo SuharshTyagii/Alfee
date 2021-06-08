@@ -32,7 +32,7 @@
       </div>
       <br>
       <div class="userInterface flex justify-around ">
-         <div v-if="showFor==0 || showFor ==2" class="w-1/2 text-center px-4"> <!-- teachers section begins here -->
+         <div v-if="showFor==0 || showFor ==2" class="sm:w-1/2 w-full text-center px-4"> <!-- teachers section begins here -->
         <div class=" pl-5 pr-3 py-4   bg-yellow-100 shadow-md  ">
           <span class=" subtitle ">Teacher's Dashboard.</span>
           </div>
@@ -87,7 +87,7 @@
               </div>  
 
         </div>
-        <div v-if="showFor==1 || showFor ==2" class="px-4 pr-3 py-4 h-full  bg-gray-200 shadow-md w-1/2 ">
+        <div v-if="showFor==1 || showFor ==2" class="sm:w-1/2 w-full px-4 pr-3 py-4 h-full  bg-gray-200 shadow-md w-1/2 ">
           <div class="text-center">
             <span class=" subtitle   ">Student's Dashboard.</span>
             <div class="pb-10">
@@ -141,6 +141,13 @@
 
           
         </div>
+      
+      
+
+      </div>
+
+      <div class="subtitle font-bold pt-64  text-left">
+        Built by Suharsh Tyagi, Vincent Mora, Rob Mcknight, Sinisa Milosevic with ♥
       </div>
     </div>
 </template>
